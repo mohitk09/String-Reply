@@ -84,7 +84,7 @@ GET localhost:8080/reply/helloworld
 2. The the new controller processes the latest endpoints. 
 3. The new controller relies on the RuleProcessor class for request processing.
 4. The RuleProcessor class, has a switch case which simulates a factory design pattern to deal with different rules.
-5. Currenly there are only two rules but this could be extended further if more rules are introduces.
-6. Based on the rules, the required transformation happen.
-7. Building and running the project remain the same and the new APIS can be tested the same way old APIs are tested.
+5. Currenly there are only two rules but this could be extended further if more rules are added.
+6. Based on the rules the required transformation happen.
+7. Building and running the project remain the same and the new APIs can be tested the same way old APIs are tested.
 7. Some basic test cases have been added.
