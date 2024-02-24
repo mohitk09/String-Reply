@@ -1,4 +1,4 @@
-# Your Task
+# Summary
 Our company has released a beta version of **String Reply Service** and it has been a huge success.
 In the current implementation (as part of boilerplate code), the **String Reply Service** takes in an input string (in the format of `[a-z0-9]*`)
 and returns the input in a JSON object.
@@ -53,31 +53,7 @@ GET /v2/reply/22-kbzw9ru
 }
 ```
 
-## What you need to do
-Use the boilerplate given and implement the above requirement.
-Your implementation should also consider:
 
-- Maintain the existing endpoint for backward compatibility.
-- Implement V2 endpoint for the above new requirements.
-- Additional rules are expected in future releases. The updates in rule set
-should have minimal code changes and impact to existing functionality.
-- Testability for individual rule and the application.
-Unit tests are highly recommended.
-- Endpoints should return correct status code and response message.
-For invalid request, it should return status code `400`
-with message `"Invalid input"`, for example:
-   ```
-   GET /v2/reply/13-kbzw9ru
-   {
-       "message": "Invalid input"
-   }
-   ```
-
-Upon completing the task, please feel free to (though not required):
-
-- host your code on Github
-- include any readme to explain your setup/environment
-- add/implement anything you think would be beneficial
 
 ## Build project
 
@@ -102,3 +78,13 @@ GET localhost:8080/reply/helloworld
     message: "helloword"
 }
 ```
+
+## Implementation Details
+1. Introduced a `StringReplyV2Controller`, that resides in the same folder as the v1 controller.
+2. The the new controller processes the latest endpoints. 
+3. The new controller relies on the RuleProcessor class for request processing.
+4. The RuleProcessor class, has a switch case which simulates a factory design pattern to deal with different rules.
+5. Currenly there are only two rules but this could be extended further if more rules are introduces.
+6. Based on the rules, the required transformation happen.
+7. Building and running the project remain the same and the new APIS can be tested the same way old APIs are tested.
+7. Some basic test cases have been added.
